@@ -1,27 +1,19 @@
-class App extends React.Component {
+  class App extends React.Component {
   constructor () { 
     super();
     this.state = {
       data: window.exampleVideoData,
       video: window.exampleVideoData[0]
     };
-   onClick={this.handleClick.bind(this)}
-  }  
 
-  handleClick () {
-    this.setState({
-      done: !this.state.done
-    });
   }
-
   
-  
-
 
   render () {
-    if ( )
+
     return ( 
     <div>
+      
       <Nav />
       <div className="col-md-7">
         <VideoPlayer video={this.state.video} />
