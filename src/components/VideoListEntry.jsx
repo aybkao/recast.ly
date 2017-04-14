@@ -4,11 +4,11 @@ var VideoListEntry = ({video, clickFun}) => (
       <img className="media-object" src={video.snippet.thumbnails.default.url} alt="" />
     </div>
     <div className="media-body">
-      <div className="video-list-entry-title"  onClick={() => clickFun(video)} >{video.snippet.title}</div>
+      <div className="video-list-entry-title" onClick={() => clickFun(video)} >{video.snippet.title}</div>
       <div className="video-list-entry-detail" >{video.snippet.description}</div>
     </div>
   </div>
-)
+);
 
 
 // PropTypes tell other developers what `props` a component expects

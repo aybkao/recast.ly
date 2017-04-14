@@ -10,7 +10,7 @@ var VideoPlayer = ({video}) => (
     </div>
   </div>
 
-)
+);
 
 
 // PropTypes tell other developers what `props` a component expects

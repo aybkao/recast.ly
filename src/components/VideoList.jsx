@@ -2,7 +2,7 @@ var VideoList = ({videos, clickFun}) => (
   <div className="video-list media" >
     {videos.map((x) => <VideoListEntry video={x} clickFun={clickFun}/>)}
   </div>
-)
+);
 
 // PropTypes tell other developers what `props` a component expects
 // Warnings will be shown in the console when the defined rules are violated
