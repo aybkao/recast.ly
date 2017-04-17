@@ -1,5 +1,19 @@
 
 
+// var Search = (props) => (
+//   <div className="search-bar form-inline">
+//     <input
+//       className="form-control"
+//       type="text"
+//       onkeydown={props.handleSearchInput(this)}
+//       placeholder="Search......"
+//     />
+//     <button className="btn hidden-sm-down">
+//       <span className="glyphicon glyphicon-search"></span>
+//     </button>
+//   </div>
+// )
+
 
 class Search extends React.Component {
   constructor(props) {

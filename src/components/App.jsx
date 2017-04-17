@@ -58,7 +58,7 @@ class App extends React.Component {
   
 
   componentDidMount() {
-    this.getYouTubeVideos('dogs');
+    this.getYouTubeVideos('cats');
   }
 
 
@@ -73,9 +73,9 @@ class App extends React.Component {
   getYouTubeVideos(query) {
 
     var options = {
-      key: 'AIzaSyBZTKuZ60Bb6CLk6J_ZSInuL8mt0vi186I',
+      key: this.props.YOUTUBE_API_KEY,
       query: query,
-      max: 10
+      max: 7
     }
 
     this.props.searchYouTube(options, (videos) => {
@@ -103,7 +103,7 @@ class App extends React.Component {
 
     return ( 
       <div>
-        <Nav />
+        <Nav handleSearchInput={this.getYouTubeVideos.bind(this)}/>
         <div className="col-md-7">
           <VideoPlayer video={this.state.currentVideo} />
         </div>
