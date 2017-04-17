@@ -58,30 +58,33 @@ class App extends React.Component {
   
 
   componentDidMount() {
-    this.getYouTubeVideos('react tutorials');
+    this.getYouTubeVideos('dogs');
   }
 
 
-  handleVideoListEntryTitleClick(video) {
+  handleTitleClick(clickedVideo) {
     this.setState({
-      currentVideo: video
+      currentVideo: clickedVideo
     });
   }
   
 
 
   getYouTubeVideos(query) {
-    var options = {
-      key: this.props.API_KEY,
-      query: query
-    };
 
-    this.props.searchYouTube(options, (videos) =>
+    var options = {
+      key: 'AIzaSyBZTKuZ60Bb6CLk6J_ZSInuL8mt0vi186I',
+      query: query,
+      max: 10
+    }
+
+    this.props.searchYouTube(options, (videos) => {
       this.setState({
         data: videos,
         currentVideo: videos[0]
       })
-    );
+    });
+
   }
   
   
@@ -107,7 +110,7 @@ class App extends React.Component {
         <h1>HAHAHA1</h1>
         <h2 style={style} onMouseEnter={this.onListItemClick.bind(this)}>HOVER bold</h2>
         <div className="col-md-5">
-          <VideoList videos={window.exampleVideoData} />
+          <VideoList videos={this.state.data} handleTitleClick={this.handleTitleClick.bind(this)} />
         </div>
       </div>
 
